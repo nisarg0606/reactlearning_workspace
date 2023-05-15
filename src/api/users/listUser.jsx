@@ -74,7 +74,7 @@ export const ListUser = () => {
         <h1>
             List User
         </h1>
-        <table class="table">
+        <table className="table">
     <thead>
         <tr>
         <th scope="col">id</th>

@@ -37,20 +37,32 @@ export const Products = () => {
         setProductData(newProducts);
     }
 
-    function editProduct(_id) {
-        var newProducts = productData.filter((product) => product._id !== _id);
+    function editProduct(product) {
+        console.log(product);
+        debugger;
+        var newProducts = productData.map((p) => {
+            if (p._id === product._id) {
+                return product;
+            }
+            return p;
+        }
+        );
         setProductData(newProducts);
     }
 
     function addProduct(product) {
         console.log(product);
+        debugger;
+        var productData_length = productData.length;
+        console.log(productData_length);
+        // product.id = Number(productData_length) + 1;
         // if discounted price is greater than price, then throw an error
-        if (product.discountedPrice > product.price) {
+        if (Number(product.discountedPrice) > Number(product.price)) {
             alert("Discounted price cannot be greater than price");
             return;
         }
         // quantity should not be greater than 100
-        if (product.quantity > 100) {
+        if (Number(product.quantity) > 100) {
             alert("Quantity cannot be greater than 100");
             return;
         }

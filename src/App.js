@@ -8,6 +8,7 @@ import { Route, Routes } from "react-router-dom";
 import { ListUser } from "./api/users/listUser";
 import { EditUser } from "./api/users/EditUser";
 import { Products } from "./products/Products";
+import { EditProduct } from "./api/products/EditProduct";
 
 function App() {
   var title = "React App";
@@ -16,16 +17,16 @@ function App() {
       {/* { <Header  title ={title}/>} */}
       {/* <Registration/> */}
       {/* <Users /> */}
-      <Products />
       {/* <Footer /> */}
       {/* {<Navbar />} */}
       {/* <Route path="/users" component={Users} /> */}
-      {/* <Routes> */}
-      {/* <Route path="/listuser" element = {<ListUser/>}></Route> */}
-      {/* <Route path="/edituser/:id" element = {<EditUser/>}></Route> */}
-      {/* </Routes> */}
+      <Routes>
+      <Route path="/listuser" element = {<ListUser/>}></Route>
+      <Route path="/edituser/:id" element = {<EditUser/>}></Route>
+      <Route path="/products" element = {<Products/>}></Route>
+      <Route path="=/editproduct/:id/:name/:price/:quantity/:description/:discountedPrice" element = {<EditProduct/>}></Route>
+      </Routes>
 
-      <br />
     </div>
   );
 }
